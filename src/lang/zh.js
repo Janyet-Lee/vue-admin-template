@@ -1,7 +1,7 @@
 export default {
   route: {
     dashboard: '首页',
-    introduction: '简述',
+    formDemo: '表单',
     documentation: '文档',
     permission: '权限测试页',
     icons: '图标',

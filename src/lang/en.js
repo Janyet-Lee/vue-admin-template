@@ -1,7 +1,7 @@
 export default {
   route: {
     dashboard: 'Dashboard',
-    introduction: 'Introduction',
+    formDemo: 'form',
     documentation: 'Documentation',
     permission: 'Permission',
     icons: 'Icons',

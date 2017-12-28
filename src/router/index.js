@@ -60,9 +60,9 @@ export const constantRouterMap = [
     children: [
       {
         path: 'index',
-        name: 'introduction',
+        name: 'formDemo',
         component: _import('form/index'),
-        meta: { title: 'introduction', icon: 'form' }
+        meta: { title: 'formDemo', icon: 'form' }
       }
     ]
   },

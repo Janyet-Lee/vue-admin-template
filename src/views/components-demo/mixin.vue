@@ -52,16 +52,6 @@
       </el-col>
     </el-row>
 
-    <el-row :gutter="20" style="margin-top:50px;">
-      <el-col :span="6">
-        <el-card class="box-card">
-          <div slot="header" class="clearfix">
-            <span>Share</span>
-          </div>
-        </el-card>
-      </el-col>
-    </el-row>
-
   </div>
 </template>
 

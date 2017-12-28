@@ -44,13 +44,28 @@
         <el-button @click="onCancel">Cancel</el-button>
       </el-form-item>
     </el-form>
+    <div>
+      <a href="https://monterail.github.io/vuelidate/#sub-basic-form">这是vue的一个表单验证库，根据项目实际情况决定是否使用</a>
+      <div style="margin-top: 20px;" class="form-group" v-bind:class="{ 'form-group--error': $v.name.$error }">
+        <label class="form__label">Name</label>
+        <input class="form__input" v-model.trim="name" @input="$v.name.$touch()">
+      </div><span class="form-group__message" v-if="!$v.name.required">Field is required</span><span class="form-group__message" v-if="!$v.name.minLength">Name must have at least {{$v.name.$params.minLength.min}} letters.</span>
+      <div class="form-group" v-bind:class="{ 'form-group--error': $v.age.$error }">
+        <label class="form__label">Age</label>
+        <input class="form__input" v-model.trim="age" @blur="$v.age.$touch()">
+      </div><span class="form-group__message" v-if="!$v.age.between">Must be between {{$v.age.$params.between.min}} and {{$v.age.$params.between.max}}</span>
+    </div>
   </div>
 </template>
 
 <script>
+import { required, minLength, between } from 'vuelidate/lib/validators'
+
 export default {
   data() {
     return {
+      name: '',
+      age: 0,
       form: {
         name: '',
         region: '',
@@ -61,6 +76,15 @@ export default {
         resource: '',
         desc: ''
       }
+    }
+  },
+  validations: {
+    name: {
+      required,
+      minLength: minLength(4)
+    },
+    age: {
+      between: between(20, 30)
     }
   },
   methods: {
