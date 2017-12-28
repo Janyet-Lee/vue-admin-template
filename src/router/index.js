@@ -126,5 +126,5 @@ export default new Router({
 })
 
 // 需要主动调用验证是否登录的路由
-export const checkList = ['/login']
+export const checkList = ['/login', '/dashboard']
 

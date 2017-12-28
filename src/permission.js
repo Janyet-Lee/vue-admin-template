@@ -23,7 +23,13 @@ router.beforeEach(async(to, from, next) => {
           message: err.data
         })
       }
-      next()
+      console.log('1232312312')
+      if (to.path === '/login') {
+        next()
+      } else {
+        next('/login')
+        NProgress.done()
+      }
     })
   } else {
     next()
