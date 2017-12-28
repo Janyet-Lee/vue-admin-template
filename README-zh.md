@@ -20,40 +20,26 @@
  - [手摸手，带你封装一个vue component](https://segmentfault.com/a/1190000009090836)
 
 
-# vueAdmin-template
+# vue-admin-template
 这是基于[线上地址](http://panjiachen.github.io/vueAdmin-template)修改的管理后台模板,结合我们公司的使用情况保留了部分结构并改写了部分规则，并添加了一些常用的组件，包含了axios常用库和iconfont，详细的使用可看各文件内的注释。
 
 ## Extra
 eslint: 代码规范方面，使用了elementFE的代码规范 
-[饿了么eslint](https://www.npmjs.com/package/eslint-plugin-actionable-elements)
+- [饿了么eslint](https://www.npmjs.com/package/eslint-plugin-actionable-elements)
 
-mock: 接口模拟方面，推荐使用easy-mock[easy-mock](https://easy-mock.com/)，也可以使用mock.js
+mock: 接口模拟方面，推荐使用easy-mock
+- [easy-mock](https://easy-mock.com/)，也可以使用mock.js
 
 validate: 表达验证方面，可以使用element自带的验证规则，同时也引入了
-[vuelidate库](https://monterail.github.io/vuelidate/#sub-installation)，根据项目实际需要选择
+- [vuelidate](https://monterail.github.io/vuelidate/#sub-installation)，根据项目实际需要选择
 
-## Build Setup
+chart: 本模板暂未集成echart进去，如有需要可根据一下文档安装使用
+- [webpack中使用ECharts](http://echarts.baidu.com/tutorial.html#%E5%9C%A8%20webpack%20%E4%B8%AD%E4%BD%BF%E7%94%A8%20ECharts)
+- [ECharts按需引入](https://github.com/ecomfe/echarts/blob/master/index.js)
 
-``` bash
-
-# Clone project
-git clone https://github.com/PanJiaChen/vueAdmin-template.git
-
-# Install dependencies
-npm install
-
-# 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
-
-# serve with hot reload at localhost:9528
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
+map: 地图组件方面，可以使用vue-baidu-map，也可以使用ElementFE的高德地图组件，按需选择
+[百度地图](https://dafrok.github.io/vue-baidu-map/#/zh/index)
+[高德地图](https://elemefe.github.io/vue-amap/#/)
 
 ##目录结构
 +-- src
@@ -79,3 +65,28 @@ npm run build --report
   |   +-- tools.js 公共方法
   |   +-- excel excel操作相关
   |   +-- i18n.js 国际化相关
++-- private.config.js 跑项目需要配置的变量，内有注释
+
+
+## Build Setup
+
+``` bash
+
+# Clone project
+git clone https://github.com/PanJiaChen/vueAdmin-template.git
+
+# Install dependencies
+npm install
+
+# 建议不要用cnpm  安装有各种诡异的bug 可以通过如下操作解决npm速度慢的问题
+npm install --registry=https://registry.npm.taobao.org
+
+# serve with hot reload at localhost:9528
+npm run dev
+
+# build for production with minification
+npm run build
+
+# build for production and view the bundle analyzer report
+npm run build --report
+```
