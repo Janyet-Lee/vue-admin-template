@@ -13,7 +13,7 @@ import Layout from '../views/layout/Layout'
 * redirect: noredirect           if `redirect:noredirect` will no redirct in the breadcrumb
 * name:'router-name'             the name is used by <keep-alive> (must set!!!)
 * meta : {
-    title: 'title'               the name show in submenu and breadcrumb (recommend set)
+    title: 'title'               the name show in submenu and breadcrumb,and it will translate into the language based on your using environment as long as you had already defined it in lang
     icon: 'svg-name'             the icon show in the sidebar,
   }
 **/
@@ -70,7 +70,7 @@ export const constantRouterMap = [
     path: '/excel',
     component: Layout,
     meta: {
-      title: 'dndList',
+      title: 'excel',
       icon: 'example'
     },
     children: [
@@ -100,7 +100,7 @@ export const constantRouterMap = [
     redirect: 'noredirect',
     name: 'component-demo',
     meta: {
-      title: 'componentMixin',
+      title: 'components',
       icon: 'example'
     },
     children: [

@@ -3,7 +3,7 @@
     <textarea class="tinymce-textarea" :id="tinymceId"></textarea>
     <div class="editor-custom-btn-container">
      <editorImage  color="#20a0ff" class="editor-upload-btn" @successCBK="imageSuccessCBK"></editorImage>
-      </div>
+    </div>
   </div>
 </template>
 
