@@ -8,7 +8,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { Message } from 'element-ui'
 import basicConfig from '../private.config'
-import store from '@/store'
+// import store from '@/store'
 
 // API 服务器地址
 const target = basicConfig.dev.target
@@ -16,7 +16,7 @@ const target = basicConfig.dev.target
 // 请求时的拦截器
 axios.interceptors.request.use(config => {
   // 这里可以加一些动作, 比如来个进度条开始动作
-  config.headers.token = store.state.user.token
+  // config.headers.token = store.state.user.token
   return config
 }, error => {
   return Promise.reject(error)
