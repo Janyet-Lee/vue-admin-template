@@ -1,6 +1,5 @@
 <template>
   <div class="app-container">
-    <el-input style='width:240px;' placeholder="请输入文件名(默认excel-list)" prefix-icon="el-icon-document" v-model="filename"></el-input>
     <el-button style='margin-bottom:20px;' type="primary" icon="document" @click="handleDownload" :loading="downloadLoading">导出excel</el-button>
     <el-table :data="list" v-loading.body="listLoading" element-loading-text="拼命加载中" border fit highlight-current-row>
       <el-table-column align="center" label='ID' width="95">
@@ -44,44 +43,44 @@ export default {
       list: [
         {
           id: 1,
-          title: '测试标题',
+          title: '测试标题1',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'
         },
         {
           id: 2,
-          title: '测试标题',
+          title: '测试标题2',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'
         },
         {
-          title: '测试标题',
+          title: '测试标题3',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'
         },
         {
-          title: '测试标题',
+          title: '测试标题4',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'
         },
         {
-          title: '测试标题',
+          title: '测试标题5',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'
         },
         {
-          title: '测试标题',
+          title: '测试标题6',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'
         },
         {
-          title: '测试标题',
+          title: '测试标题7',
           author: '测试作者',
           pageviews: 10000,
           timestamp: '2004-09-15 06:40:28'

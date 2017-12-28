@@ -21,12 +21,16 @@
 
 
 # vueAdmin-template
-这是基于[线上地址](http://panjiachen.github.io/vueAdmin-template)修改的管理后台模板,结合我们公司的使用情况保留了部分结构，并添加了一些常用的组件，包含了axios常用库和iconfont，详细的使用可看各文件内的注释。
+这是基于[线上地址](http://panjiachen.github.io/vueAdmin-template)修改的管理后台模板,结合我们公司的使用情况保留了部分结构并改写了部分规则，并添加了一些常用的组件，包含了axios常用库和iconfont，详细的使用可看各文件内的注释。
 
 ## Extra
 eslint: 代码规范方面，使用了elementFE的代码规范 
 [饿了么eslint](https://www.npmjs.com/package/eslint-plugin-actionable-elements)
-mock: 接口模拟推荐使用easy-mock[easy-mock](https://easy-mock.com/)
+
+mock: 接口模拟方面，推荐使用easy-mock[easy-mock](https://easy-mock.com/)，也可以使用mock.js
+
+validate: 表达验证方面，可以使用element自带的验证规则，同时也引入了
+[vuelidate库](https://monterail.github.io/vuelidate/#sub-installation)，根据项目实际需要选择
 
 ## Build Setup
 

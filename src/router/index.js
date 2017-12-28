@@ -89,7 +89,7 @@ export const constantRouterMap = [
       {
         path: 'upload',
         name: 'excel3',
-        component: _import('excel/exportExcel'),
+        component: _import('excel/uploadExcel'),
         meta: { title: 'uploadExcel', icon: 'form' }
       }
     ]

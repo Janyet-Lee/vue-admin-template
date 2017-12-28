@@ -8,8 +8,8 @@
         <img class="pic-404__child right" :src="img_404_cloud" alt="404"> -->
       </div>
       <div class="bullshit">
-        <div class="bullshit__oops">OOPS!</div>
-        <div class="bullshit__info">有事请联系<a class="link-type" href="http://www.wili.us/" target='_blank'>唯厘UFE</a></div>
+        <div class="bullshit__oops">OOPS!页面找不到了~</div>
+        <div class="bullshit__info">如有疑问请联系<a class="link-type" href="http://www.wili.us/" target='_blank'>唯厘UFE</a></div>
         <div class="bullshit__headline">{{ message }}</div>
         <div class="bullshit__info">请检查您输入的网址是否正确，请点击以下按钮返回主页</div>
         <a href="/" class="bullshit__return-home">返回首页</a>
@@ -218,7 +218,7 @@ export default {
       animation-duration: 0.5s;
       animation-delay: 0.3s;
       animation-fill-mode: forwards;
-      margin-top: 30px;
+      margin-top: 60px;
     }
     &__click {
       float: left;
