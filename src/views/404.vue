@@ -3,35 +3,39 @@
     <div class="wscn-http404">
       <div class="pic-404">
         <img class="pic-404__parent" :src="img_404" alt="404">
-        <img class="pic-404__child left" :src="img_404_cloud" alt="404">
+        <!-- <img class="pic-404__child left" :src="img_404_cloud" alt="404">
         <img class="pic-404__child mid" :src="img_404_cloud" alt="404">
-        <img class="pic-404__child right" :src="img_404_cloud" alt="404">
+        <img class="pic-404__child right" :src="img_404_cloud" alt="404"> -->
       </div>
       <div class="bullshit">
         <div class="bullshit__oops">OOPS!</div>
-        <div class="bullshit__info">版权所有<a class="link-type" href="https://wallstreetcn.com" target='_blank'>华尔街见闻</a></div>
+        <div class="bullshit__info">有事请联系<a class="link-type" href="http://www.wili.us/" target='_blank'>唯厘UFE</a></div>
         <div class="bullshit__headline">{{ message }}</div>
-        <div class="bullshit__info">请检查您输入的网址是否正确，请点击以下按钮返回主页或者发送错误报告</div>
+        <div class="bullshit__info">请检查您输入的网址是否正确，请点击以下按钮返回主页</div>
         <a href="/" class="bullshit__return-home">返回首页</a>
+        <img class="bullshit__click" :src="img_click" alt="">
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import img_404 from '@/assets/404_images/404.png'
-import img_404_cloud from '@/assets/404_images/404_cloud.png'
+import img_404 from '@/assets/404_images/404spaceman.png'
+import img_click from '@/assets/404_images/click.gif'
+// import img_404 from '@/assets/404_images/404.png'
+// import img_404_cloud from '@/assets/404_images/404_cloud.png'
 
 export default {
   data() {
     return {
       img_404,
-      img_404_cloud
+      img_click
+      // img_404_cloud
     }
   },
   computed: {
     message() {
-      return '特朗普说这个页面你不能进......'
+      return '习大大说这个页面你不能进😆😆😆......'
     }
   }
 }
@@ -41,10 +45,11 @@ export default {
 .wscn-http404 {
   position: relative;
   width: 1200px;
-  margin: 20px auto 60px;
-  padding: 0 100px;
+  // margin: 20px auto 60px;
+  // padding: 0 100px;
   overflow: hidden;
   .pic-404 {
+    background: linear-gradient(to right, black, transparent);
     position: relative;
     float: left;
     width: 600px;
@@ -159,14 +164,15 @@ export default {
   .bullshit {
     position: relative;
     float: left;
-    width: 300px;
+    width: 400px;
     padding: 150px 0;
+    margin-left: 50px;
     overflow: hidden;
     &__oops {
       font-size: 32px;
       font-weight: bold;
       line-height: 40px;
-      color: #1482f0;
+      color: #333;
       opacity: 0;
       margin-bottom: 20px;
       animation-name: slideUp;
@@ -176,7 +182,7 @@ export default {
     &__headline {
       font-size: 20px;
       line-height: 24px;
-      color: #1482f0;
+      color: #333;
       opacity: 0;
       margin-bottom: 10px;
       animation-name: slideUp;
@@ -200,7 +206,7 @@ export default {
       float: left;
       width: 110px;
       height: 36px;
-      background: #1482f0;
+      background: #333;
       border-radius: 100px;
       text-align: center;
       color: #ffffff;
@@ -212,6 +218,14 @@ export default {
       animation-duration: 0.5s;
       animation-delay: 0.3s;
       animation-fill-mode: forwards;
+      margin-top: 30px;
+    }
+    &__click {
+      float: left;
+      width: 200px;
+      height: auto;
+      margin-left: 20px;
+      border-radius: 10px;
     }
     @keyframes slideUp {
       0% {
