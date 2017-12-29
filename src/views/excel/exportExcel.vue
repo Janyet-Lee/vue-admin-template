@@ -40,67 +40,23 @@ export default {
       listLoading: true,
       downloadLoading: false,
       filename: '',
-      list: [
-        {
-          id: 1,
-          title: '测试标题1',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          id: 2,
-          title: '测试标题2',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题3',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题4',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题5',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题6',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题7',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        }
-      ]
+      list: []
     }
   },
   created() {
     this.fetchData()
-    this.list.forEach((ele, index) => {
-      ele.id = index
-    })
   },
   methods: {
-    fetchData() {
-      this.listLoading = false
-      // fetchList().then(response => {
-      //   this.list = response.data.items
-      //   this.listLoading = false
-      // })
+    async fetchData() {
+      this.listLoading = true
+      const { code, data } = await this.api.get('/api/template/getExcelList')
+      if (code === 200) {
+        this.list = data.array
+        this.listLoading = false
+        this.list.forEach((ele, index) => {
+          ele.id = index
+        })
+      }
     },
     handleDownload() {
       this.downloadLoading = true

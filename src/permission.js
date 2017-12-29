@@ -23,7 +23,6 @@ router.beforeEach(async(to, from, next) => {
           message: err.data
         })
       }
-      console.log('1232312312')
       if (to.path === '/login') {
         next()
       } else {

@@ -18,6 +18,9 @@ import store from './store'
 
 import '@/icons' // icon
 import '@/permission' // permission control
+import request from '../utils/request'
+
+Vue.prototype.api = request // 注册全局请求方法
 
 // 表单验证库
 Vue.use(Vuelidate)

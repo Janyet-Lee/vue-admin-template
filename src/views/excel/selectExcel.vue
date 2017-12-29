@@ -41,52 +41,7 @@ export default {
   name: 'selectExcel',
   data() {
     return {
-      list: [
-        {
-          id: 1,
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          id: 2,
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        },
-        {
-          title: '测试标题',
-          author: '测试作者',
-          pageviews: 10000,
-          timestamp: '2004-09-15 06:40:28'
-        }
-      ],
+      list: [],
       listLoading: true,
       multipleSelection: [],
       downloadLoading: false,
@@ -100,12 +55,16 @@ export default {
     })
   },
   methods: {
-    fetchData() {
-      this.listLoading = false
-      // fetchList(this.listQuery).then(response => {
-      //   this.list = response.data.items
-      //   this.listLoading = false
-      // })
+    async fetchData() {
+      this.listLoading = true
+      const { code, data } = await this.api.get('/api/template/getExcelList')
+      if (code === 200) {
+        this.list = data.array
+        this.listLoading = false
+        this.list.forEach((ele, index) => {
+          ele.id = index
+        })
+      }
     },
     handleSelectionChange(val) {
       this.multipleSelection = val

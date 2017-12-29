@@ -8,6 +8,7 @@ import axios from 'axios'
 import qs from 'qs'
 import { Message } from 'element-ui'
 import basicConfig from '../private.config'
+import router from '../src/router'
 
 // API 服务器地址
 const target = basicConfig.dev.target
@@ -26,7 +27,7 @@ axios.interceptors.response.use(response => response, error => {
   return Promise.resolve(error.response)
 })
 
-function checkStatus (response) {
+function checkStatus(response) {
   // NProgress.done()
   // 如果 http 状态码正常, 则直接返回数据
   if (+response.status === 200 || +response.status === 304) {
@@ -54,8 +55,11 @@ function checkStatus (response) {
 }
 
 // 处理来自后端的错误
-function checkCode (res) {
-  console.log(window.location.hash)
+function checkCode(res) {
+  if (res.code === 506) {
+    Message.error({ title: '警告', message: `${res.code} ${res.data}. ` })
+    router.push('/login')
+  }
   if (res.code !== 200 && window.location.hash !== '#/login') {
     Message.error({ title: '警告', message: `${res.code} ${res.data}. ` })
   }
@@ -63,7 +67,7 @@ function checkCode (res) {
 }
 
 export default {
-  post (url, data) {
+  post(url, data) {
     return axios({
       method: 'post',
       url: target + url,
@@ -76,7 +80,7 @@ export default {
       }
     }).then(checkStatus).then(checkCode)
   },
-  get (url, params) {
+  get(url, params) {
     return axios({
       method: 'get',
       url: target + url,
