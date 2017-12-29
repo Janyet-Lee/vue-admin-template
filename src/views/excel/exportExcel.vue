@@ -33,6 +33,8 @@
 </template>
 
 <script>
+import { getList } from '@/api/excel.js'
+
 export default {
   name: 'exportExcel',
   data() {
@@ -47,16 +49,25 @@ export default {
     this.fetchData()
   },
   methods: {
-    async fetchData() {
+    fetchData() {
       this.listLoading = true
-      const { code, data } = await this.api.get('/api/template/getExcelList')
-      if (code === 200) {
-        this.list = data.array
-        this.listLoading = false
-        this.list.forEach((ele, index) => {
-          ele.id = index
-        })
-      }
+      getList().then((res) => {
+        if (res.code === 200) {
+          this.list = res.data.array
+          this.listLoading = false
+          this.list.forEach((ele, index) => {
+            ele.id = index
+          })
+        }
+      })
+      // const { code, data } = await this.api.get('/api/template/getExcelList')
+      // if (code === 200) {
+      //   this.list = data.array
+      //   this.listLoading = false
+      //   this.list.forEach((ele, index) => {
+      //     ele.id = index
+      //   })
+      // }
     },
     handleDownload() {
       this.downloadLoading = true

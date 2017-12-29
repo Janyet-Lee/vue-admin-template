@@ -58,7 +58,8 @@ function checkStatus(response) {
 function checkCode(res) {
   if (res.code === 506) {
     Message.error({ title: '警告', message: `${res.code} ${res.data}. ` })
-    router.push('/login')
+    // router.push('/login')
+    window.location.hash = '#/login'
   }
   if (res.code !== 200 && window.location.hash !== '#/login') {
     Message.error({ title: '警告', message: `${res.code} ${res.data}. ` })
