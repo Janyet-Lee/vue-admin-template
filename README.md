@@ -25,29 +25,30 @@ map: 地图组件方面，可以使用vue-baidu-map，也可以使用ElementFE�
 
 
 ##目录结构
+.
 +-- src
-  +-- api 模块接口
-  +-- assets 静态资源。一般图片。按目录分好，以下也是。
-  +-- components 公共组件
-  +-- directive 存放vue自定义指令
-  +-- lang 国际化语言包，关联文件为utils/i18n.js
-  +-- router 路由
-  +-- icons 图标, 可以到 iconfont.cn 上选择并生成自己的业务图标库，再进行使用,推荐单独导出 svg 的引入使用方式
-  +-- store 存放全局属性,方法
-  +-- styles 存放全局样式
-  +-- views 业务页面
-  |   +-- module-name
-  |   |   +-- ***.vue
-  +-- index.html
-  +-- app.vue
-  +-- main.js 入口文件
-  +-- permission.js 判断是否拥有登录权限
+|  +-- api 模块接口
+|  +-- assets 静态资源。一般图片。按目录分好，以下也是。
+|  +-- components 公共组件
+|  +-- directive 存放vue自定义指令
+|  +-- lang 国际化语言包，关联文件为utils/i18n.js
+|  +-- router 路由
+|  +-- icons 图标, 可以到 iconfont.cn 上选择并生成自己的业务图标库，再进行使用,推荐单独导出 svg 的引入使用方式
+|  +-- store 存放全局属性,方法
+|  +-- styles 存放全局样式
+|  +-- views 业务页面
+|  |   +-- module-name
+|  |   |   +-- ***.vue
+|  +-- index.html
+|  +-- app.vue
+|  +-- main.js 入口文件
+|  +-- permission.js 判断是否拥有登录权限
 +-- static 存放静态资源库，目前存放了tinymce
 +-- utils
-  |   +-- request.js 封装的网络请求组件
-  |   +-- tools.js 公共方法
-  |   +-- excel excel操作相关
-  |   +-- i18n.js 国际化相关
+|   +-- request.js 封装的网络请求组件
+|   +-- tools.js 公共方法
+|   +-- excel excel操作相关
+|   +-- i18n.js 国际化相关
 +-- private.config.js 跑项目需要配置的变量，内有注释
 
 
