@@ -6,6 +6,9 @@
 eslint: 代码规范方面，使用了elementFE的代码规范 
 - [饿了么eslint](https://www.npmjs.com/package/eslint-plugin-actionable-elements)
 
+i18n: 路由标题生成方面，根据router里面meta元数据的title进行匹配生成，使用了国际化语言库，因此各种标题的语言版本要预先定义好，在src目录下lang目录里面进行定义，目前只定义了zh和en版本
+
+
 mock: 接口模拟方面，推荐使用easy-mock
 - [easy-mock](https://easy-mock.com/)，也可以使用mock.js
 
