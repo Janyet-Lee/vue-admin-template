@@ -8,7 +8,6 @@ import axios from 'axios'
 import qs from 'qs'
 import { Message } from 'element-ui'
 import basicConfig from '../private.config'
-import router from '../src/router'
 
 // API 服务器地址
 const target = basicConfig.dev.target
@@ -56,10 +55,10 @@ function checkStatus(response) {
 
 // 处理来自后端的错误
 function checkCode(res) {
-  if (res.code === 506) {
+  if (res.code === 506 && window.location.hash !== '#/login') {
     Message.error({ title: '警告', message: `${res.code} ${res.data}. ` })
-    // router.push('/login')
     window.location.hash = '#/login'
+    return false
   }
   if (res.code !== 200 && window.location.hash !== '#/login') {
     Message.error({ title: '警告', message: `${res.code} ${res.data}. ` })
