@@ -43,6 +43,7 @@ export default {
     exportZip: 'Zip',
     theme: 'Theme',
     clipboardDemo: 'Clipboard',
-    i18n: 'I18n'
+    i18n: 'I18n',
+    vuePdf: 'pdf viewer'
   }
 }

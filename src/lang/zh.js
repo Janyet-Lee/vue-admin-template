@@ -43,6 +43,7 @@ export default {
     exportZip: 'zip',
     theme: '换肤',
     clipboardDemo: 'clipboard',
-    i18n: '国际化'
+    i18n: '国际化',
+    vuePdf: 'pdf预览'
   }
 }
